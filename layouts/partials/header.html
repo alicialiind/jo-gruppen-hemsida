@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+    <link rel="icon" href="/img/favicon.ico">
+
+    {{ with .OutputFormats.Get "rss" -}}
+		{{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+	{{ end -}}
+</head>
+<header>
+    <a href="/index.html"><img src="/img/base_logo_transparent_background.png" alt="logo" class="logo"/></a>
+    <div id="hamburger-lines">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+    </div>
+    <nav class="" id="nav-bar">
+        <ul>
+            {{ range.Site.Menus.main }}
+            <li>
+            <a href="{{ .URL }}">{{ .Name }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
+</header>
+
+<script defer language="javascript" type="text/javascript"  src="{{ "/js/script.js" | urlize | relURL }}"></script>
