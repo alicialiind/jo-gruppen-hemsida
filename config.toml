@@ -3,3 +3,4 @@ title = "JO-Gruppen"
 theme = "hugo-starter"
 baseURL = ""
 relativeURLs = "True"
+uglyURLs = true
