@@ -1,0 +1,5 @@
+DefaultContentLanguage = "en"
+title = "JO-Gruppen"
+theme = "hugo-starter"
+baseURL = ""
+relativeURLs = "True"
